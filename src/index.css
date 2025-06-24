@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600;
+  }
+  
+  .card {
+    @apply p-6 bg-white shadow-md rounded-lg;
+  }
+  
+  .header {
+    @apply text-2xl font-bold mb-4;
+  }
+}
