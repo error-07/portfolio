@@ -20,7 +20,7 @@ const Contact = () => {
         >
           <FaEnvelope className="text-indigo-400 text-3xl" />
           <a href="mailto:baseet52@example.com" className="text-lg break-all hover:underline">
-            baseet52@example.com
+            baseet52@gmail.com
           </a>
         </motion.div>
 
