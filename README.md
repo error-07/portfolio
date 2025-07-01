@@ -20,21 +20,7 @@ This is a personal portfolio website built using **React**, **Tailwind CSS**, an
 
 ---
 
-## 📁 Project Structure
 
-src/
-├── components/
-│ ├── Home.jsx
-│ ├── About.jsx
-│ ├── Projects.jsx
-│ ├── Contact.jsx
-│ ├── Navbar.jsx
-│ ├── NavButton.jsx
-│ ├── PageWrapper.jsx
-│ └── PageTransition.jsx
-├── App.js
-├── index.js
-├── index.css
 
 **1. Clone the repository**
 
@@ -43,9 +29,13 @@ git clone https://github.com/error-07/portfolio.git
 cd portfolio
 
 **2. Install dependencies**
+
+
 npm install
 
 
 **3. Start the development server**
+
+
 npm start
 
