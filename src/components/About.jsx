@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const About = () => (
   <motion.section
     id="about"
-    className="min-h-screen px-8 py-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
+    className="min-h-screen px-8 pt-32 py-24 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1 }}
