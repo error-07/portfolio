@@ -10,7 +10,7 @@
   "react-icons": "^5.5.0",
   "react-router-dom": "^7.6.2",
   "react-scripts": "5.0.1",
-  "react-simple-typewriter": "^latest-version"
+  "react-simple-typewriter": "^1.0.8"
 }
       ,
   "scripts": {
