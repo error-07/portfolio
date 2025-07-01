@@ -1,7 +1,22 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
+  const fullText =
+    "Full Stack Software Developer committed to delivering clean, scalable backend architecture and intuitive user interfaces.";
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const speed = 50; // ms per character (faster for your need)
+    const timer = setInterval(() => {
+      setText((prev) => prev + fullText.charAt(index));
+      index++;
+      if (index >= fullText.length) clearInterval(timer);
+    }, speed);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <motion.section
       id="home"
@@ -21,17 +36,8 @@ const Home = () => {
           className="text-2xl mb-10 tracking-wide drop-shadow-md"
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
-          <Typewriter
-            words={[
-              "Full Stack Software Developer committed to delivering clean, scalable backend architecture and intuitive user interfaces."
-            ]}
-            loop={1}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}   // fast typing
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
+          {text}
+          <span className="animate-pulse">|</span>
         </p>
       </div>
     </motion.section>
