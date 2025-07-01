@@ -1,20 +1,34 @@
-import NavButton from "./NavButton";
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-900 text-white shadow-md sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-indigo-400">Mohammad Baseet</div>
-        <div className="flex space-x-4">
-          <NavButton to="/" label="Home" className={buttonClasses} />
-          <NavButton to="/about" label="About" className={buttonClasses} />
-          <NavButton to="/projects" label="Projects" className={buttonClasses} />
-          <NavButton to="/contact" label="Contact" className={buttonClasses} />
-        </div>
-      </div>
-    </nav>
+    <Box
+      sx={{
+        backgroundColor: '#0B1D51', // Midnight Blue
+        color: 'white',
+        borderRadius: '16px',
+        padding: '1rem 2rem',
+        margin: '1rem',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}
+    >
+      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+        My Portfolio
+      </Typography>
+
+      <Box sx={{ display: 'flex', gap: '1rem' }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
+        <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link>
+        <Link to="/projects" style={{ color: 'white', textDecoration: 'none' }}>Projects</Link>
+        <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
+      </Box>
+    </Box>
   );
 };
 
 export default Navbar;
-const buttonClasses = "text-lg font-medium hover:text-indigo-400 transition-colors duration-300";
