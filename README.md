@@ -24,18 +24,17 @@ This is a personal portfolio website built using **React**, **Tailwind CSS**, an
 
 **1. Clone the repository**
 
-bash
-git clone https://github.com/error-07/portfolio.git
-cd portfolio
+    git clone https://github.com/error-07/portfolio.git
+    cd portfolio
 
 **2. Install dependencies**
 
 
-npm install
+    npm install
 
 
 **3. Start the development server**
 
 
-npm start
+    npm start
 
