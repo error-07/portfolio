@@ -1,32 +1,51 @@
-# Portfolio - Mohammad Abdul Baseet
+# 🧑‍💻 Portfolio Website — Mohammad Abdul Baseet
 
-## 🔧 Setup
+This is a personal portfolio website built using **React**, **Tailwind CSS**, and **Framer Motion**. It highlights projects, experience, and contact details, with animated transitions and a modern responsive layout.
 
-```bash
+---
+
+## 🌐 Live Demo
+
+> 🚀 [Visit Deployed Site] https://baseet-portfolio.vercel.app/
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React, Tailwind CSS, Framer Motion, React Router DOM
+- **Animations**: Framer Motion
+- **Icons**: React Icons
+- **Typing Effect**: react-simple-typewriter
+- **Deployment**: Vercel
+
+---
+
+## 📁 Project Structure
+
+src/
+├── components/
+│ ├── Home.jsx
+│ ├── About.jsx
+│ ├── Projects.jsx
+│ ├── Contact.jsx
+│ ├── Navbar.jsx
+│ ├── NavButton.jsx
+│ ├── PageWrapper.jsx
+│ └── PageTransition.jsx
+├── App.js
+├── index.js
+├── index.css
+
+**1. Clone the repository**
+
+bash
+git clone https://github.com/error-07/portfolio.git
+cd portfolio
+
+**2. Install dependencies**
 npm install
+
+
+**3. Start the development server**
 npm start
-```
 
-## 📧 Contact Form Setup (EmailJS)
-
-1. Go to [EmailJS](https://emailjs.com)
-2. Create an account, and get:
-   - Service ID
-   - Template ID
-   - User/Public Key
-3. Replace them in `Contact.jsx`:
-```js
-emailjs.send('your_service_id', 'your_template_id', form, 'your_user_id')
-```
-
-## 🧱 Tech Stack
-- React
-- Tailwind CSS
-- Framer Motion
-- EmailJS
-
-## 🛠 To Customize
-- Edit `Home.jsx` to change name/title
-- Edit `About.jsx` for your bio
-- Add or change projects in `Projects.jsx`
-- Replace dummy email IDs in `Contact.jsx`# portfolio
