@@ -41,7 +41,7 @@ const Projects = () => {
     <>
       <motion.section
         id="projects"
-        className="min-h-screen px-6 py-20 bg-gray-900 text-white"
+        className="min-h-screen px-6 pt-32 py-20 bg-gray-900 text-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
