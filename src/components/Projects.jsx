@@ -47,7 +47,7 @@ const Projects = () => {
     <>
       <motion.section
         id="projects"
-        className="min-h-screen px-6 pt-32 py-20 bg-gray-900 text-white"
+        className="min-h-screen px-6 pt-32 py-20 text-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -64,7 +64,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-gray-800 p-8 rounded-3xl shadow-lg cursor-pointer select-none"
+              className="bg-gray-800 bg-opacity-40 p-8 rounded-3xl shadow-lg cursor-pointer select-none"
               onClick={() => setSelectedIndex(index)}
             >
               <h3 className="text-2xl font-semibold mb-3 text-indigo-300">
