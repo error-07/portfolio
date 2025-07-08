@@ -8,6 +8,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -30,8 +31,8 @@ const Navbar = () => {
       transition={{ type: "spring", stiffness: 70, damping: 10 }}
       className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-indigo-900 bg-opacity-80 py-2 shadow-xl scale-[0.98]"
-          : "bg-indigo-900 bg-opacity-60 py-4"
+          ? "bg-gray-950 bg-opacity-95 py-2 shadow-xl scale-[0.98]"
+          : "bg-gray-900 bg-opacity-90 py-4"
       } backdrop-blur-md rounded-3xl mx-4 px-6`}
     >
       <div className="flex justify-between items-center">
