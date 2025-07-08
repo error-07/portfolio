@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
@@ -6,18 +6,32 @@ const Projects = () => {
     {
       title: "ASL Application",
       shortDesc: "Real-time American Sign Language translation using facial data.",
-      details: [
-        "This application leverages advanced computer vision and machine learning algorithms to accurately detect and interpret facial expressions and hand gestures associated with American Sign Language (ASL). By processing live video input, it translates these visual cues into real-time text or synthesized speech, facilitating seamless communication between deaf or hard-of-hearing individuals and those unfamiliar with sign language.",
-        "The system incorporates robust gesture recognition models that adapt to diverse lighting conditions and signer variations, ensuring high accuracy and responsiveness. Its intuitive user interface allows easy interaction, making it suitable for educational environments, public services, and daily conversations. Ultimately, this tool aims to reduce communication barriers and promote inclusivity."
-      ]
+      details: (
+        <>
+          <p>
+            This application leverages advanced computer vision and machine learning algorithms to accurately detect and interpret facial expressions and hand gestures associated with American Sign Language (ASL). By processing live video input, it translates these visual cues into real-time text or synthesized speech, facilitating seamless communication between deaf or hard-of-hearing individuals and those unfamiliar with sign language.
+          </p>
+          <p>
+            The system incorporates robust gesture recognition models that adapt to diverse lighting conditions and signer variations, ensuring high accuracy and responsiveness. Its intuitive user interface allows easy interaction, making it suitable for educational environments, public services, and daily conversations. Ultimately, this tool aims to reduce communication barriers and promote inclusivity.
+          </p>
+         
+        </>
+      ),
     },
     {
       title: "Phishing Simulator",
       shortDesc: "Simulated phishing attacks for awareness and training.",
-      details: [
-        "This platform simulates realistic phishing emails and fake websites to assess and improve employees' awareness and preparedness against phishing attacks. By mimicking common phishing tactics and social engineering strategies, it helps organizations identify vulnerable individuals and train them to recognize suspicious content.",
-        "The simulator provides detailed reports and analytics, allowing security teams to evaluate risk levels, track improvements over time, and tailor educational programs effectively. It supports customizable phishing campaigns to match different organizational roles and threat scenarios, making it a versatile tool in cybersecurity defense."
-      ]
+      details: (
+        <>
+          <p>
+            This platform simulates realistic phishing emails and fake websites to assess and improve employees' awareness and preparedness against phishing attacks. By mimicking common phishing tactics and social engineering strategies, it helps organizations identify vulnerable individuals and train them to recognize suspicious content.
+          </p>
+          <p>
+            The simulator provides detailed reports and analytics, allowing security teams to evaluate risk levels, track improvements over time, and tailor educational programs effectively. It supports customizable phishing campaigns to match different organizational roles and threat scenarios, making it a versatile tool in cybersecurity defense.
+          </p>
+          
+        </>
+      ),
     },
     {
       title: "AI Health Assistant",
@@ -27,49 +41,30 @@ const Projects = () => {
         "The second mode is a Conversational AI Bot designed to answer health-related questions in real-time. It uses natural language understanding to provide clear, context-aware responses—explaining symptoms, giving general health advice, and helping users decide if medical attention is needed.",
         "Together, these modes make the assistant a valuable self-assessment and educational tool, suitable for everyday health concerns, early triage support, and wellness guidance. It emphasizes accessibility, privacy, and ease of use."
       ]
-    }
+    },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
-
-  // Close modal on Escape key press
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setSelectedIndex(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
 
   return (
     <>
       <motion.section
         id="projects"
-        className="min-h-screen px-6 pt-32 py-20 text-white"
+        className="min-h-screen px-6 pt-32 py-20 bg-gray-900 text-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-4xl font-bold mb-8 text-indigo-400 drop-shadow-lg">
-          Projects
-        </h2>
-
+        <h2 className="text-4xl font-bold mb-8 text-indigo-400 drop-shadow-lg">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((proj, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 30 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-gray-800 bg-opacity-40 p-8 rounded-3xl shadow-lg cursor-pointer select-none"
+              className="bg-gray-800 p-8 rounded-3xl shadow-lg cursor-pointer select-none"
               onClick={() => setSelectedIndex(index)}
             >
-              <h3 className="text-2xl font-semibold mb-3 text-indigo-300">
-                {proj.title}
-              </h3>
+              <h3 className="text-2xl font-semibold mb-3 text-indigo-300">{proj.title}</h3>
               <p>{proj.shortDesc}</p>
             </motion.div>
           ))}
@@ -80,9 +75,7 @@ const Projects = () => {
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-6"
+            className="fixed inset-0 bg-black flex items-center justify-center z-50 p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -116,9 +109,7 @@ const Projects = () => {
               </h3>
 
               <div className="max-w-none space-y-4 text-gray-300">
-                {projects[selectedIndex].details.map((text, i) => (
-                  <p key={i}>{text}</p>
-                ))}
+                {projects[selectedIndex].details}
               </div>
             </motion.div>
           </motion.div>
