@@ -1,27 +1,41 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import PageWrapper from "./components/PageWrapper";
+import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
-function App() {
+const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-900 via-blue-700 to-purple-900 text-white font-poppins">
-      <Router>
-        <Navbar />
-        <PageWrapper>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </PageWrapper>
-      </Router>
-    </div>
+    <motion.section
+      id="home"
+      className="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-900 via-blue-700 to-purple-900 text-white px-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="text-center max-w-3xl">
+        <h1
+          className="text-6xl font-extrabold mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+          style={{ fontFamily: "'Poppins', sans-serif" }}
+        >
+          Hi, I'm Mohammad Abdul Baseet
+        </h1>
+        <p
+          className="text-2xl mb-10 tracking-wide drop-shadow-md"
+          style={{ fontFamily: "'Poppins', sans-serif" }}
+        >
+          <Typewriter
+            words={[
+              "Full Stack Software Developer committed to delivering clean, scalable backend architecture and intuitive user interfaces."
+            ]}
+            loop={1}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}   // fast typing
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </p>
+      </div>
+    </motion.section>
   );
-}
+};
 
-export default App;
+export default Home;
