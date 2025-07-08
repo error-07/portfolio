@@ -33,6 +33,24 @@ const Projects = () => {
         </>
       ),
     },
+    {
+      title: "AI Health Assistant",
+      shortDesc: "Dual-mode bot for symptom analysis and health-related conversations.",
+      details: (
+      <>
+        <p>
+          This AI-powered health assistant features two integrated modes to support users in understanding their health conditions. The first mode is a <strong>Symptom Checker</strong>, where users can input one or more symptoms and receive a list of possible health issues or conditions based on medical data and pattern analysis.
+        </p>
+        <p>
+        The second mode is a <strong>Conversational AI Bot</strong> designed to answer health-related questions in real-time. It uses natural language understanding to provide clear, context-aware responses—explaining symptoms, giving general health advice, and helping users decide if medical attention is needed.
+        </p>
+        <p>
+        Together, these modes make the assistant a valuable self-assessment and educational tool, suitable for everyday health concerns, early triage support, and wellness guidance. It emphasizes accessibility, privacy, and ease of use.
+        </p>
+        </>
+    ),
+  }
+
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
